@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.assign1.ssheikh.ssassigment1.SignUp"
+    tools:layout_editor_absoluteY="16dp"
+    tools:layout_editor_absoluteX="16dp">
+
+    <EditText
+        android:id="@+id/txtCreate"
+        android:layout_width="304dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Create Your Account"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteY="5dp"
+        tools:layout_editor_absoluteX="43dp"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="110dp"
+        android:layout_marginEnd="110dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="267dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Please enter required info below."
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="55dp"
+        android:layout_below="@+id/txtCreate"
+        android:layout_alignLeft="@+id/editTxtCreateEmail"
+        android:layout_alignStart="@+id/editTxtCreateEmail" />
+
+    <EditText
+        android:id="@+id/editTxtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="User Name"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="100dp"
+        android:layout_below="@+id/editTxtCreateEmail"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editTxtCreateEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email Address"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="367dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignLeft="@+id/editTxtUser"
+        android:layout_alignStart="@+id/editTxtUser" />
+
+    <EditText
+        android:id="@+id/editTxtCreatePass"
+        android:layout_width="216dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="143dp"
+        android:layout_below="@+id/editTxtUser"
+        android:layout_alignLeft="@+id/editTxtUser"
+        android:layout_alignStart="@+id/editTxtUser" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make My Account"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="465dp"
+        android:layout_below="@+id/editTxtCreatePass"
+        android:layout_centerHorizontal="true" />
+</android.widget.RelativeLayout>
