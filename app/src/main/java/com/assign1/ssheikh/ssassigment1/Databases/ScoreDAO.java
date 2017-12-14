@@ -1,9 +1,5 @@
 package com.assign1.ssheikh.ssassigment1.Databases;
 
-/**
- * Created by Ssheikh-cc on 12/13/2017.
- */
-
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;

@@ -8,33 +8,27 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
-
 import com.assign1.ssheikh.ssassigment1.Databases.AppDB;
 import com.assign1.ssheikh.ssassigment1.Databases.Score;
-
+import com.assign1.ssheikh.ssassigment1.Databases.League;
+import com.assign1.ssheikh.ssassigment1.Databases.Team;
 import java.util.List;
 
 public class Scores extends AppCompatActivity {
-
     AppDB db;
-
-    private TextView mTextMessage;
     String allScores="";
-
+    private TextView mTextMessage;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
-
     {
         mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 Intent intent;
-
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-
                         return true;
                     case R.id.navigation_dashboard:
                         intent = new Intent(Scores.this, teamsActivity.class);
@@ -47,39 +41,31 @@ public class Scores extends AppCompatActivity {
                 }
                 return false;
             }
-
         };
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.black));
+        }
         db=App.get().getDB();
-
         new getScores().execute();
-
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
-
     public void setText(){
         mTextMessage.setText(allScores);
-
     }
-
     protected class getScores extends AsyncTask<Void, Void, Boolean>{
-
         @Override
         protected Boolean doInBackground(Void... params) {
-
-
-
             try{
-
                 db.scoreDAO().addScore(new Score( 1, "Toronto Raptors vs Chicago Bulls", +4.5, "96-85"));
                 db.scoreDAO().addScore(new Score( 2, "Vancouver Canucks vs Toronto Maple Leafs", -1.5, "0-0"));
                 db.scoreDAO().addScore(new Score( 3, "Milwaukee Bucks @ Philadelphia 76ers", +3.5, "0-0"));
@@ -91,9 +77,6 @@ public class Scores extends AppCompatActivity {
                 for (Score score : scores){
                     allScores = allScores + score.teams + " " + score.odds + " "  +  score.score +"\n" + "\n" ;
                 }
-
-
-
             }
             catch (Exception e){
                 Log.e("SCOREDB", e.getMessage());
@@ -101,14 +84,10 @@ public class Scores extends AppCompatActivity {
             }
             return true;
         }
-
         @Override
         protected void onPostExecute(final Boolean success){
-
             if (success) {
-
                 setText();
-
             }
             else{
             }

@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">SSAssigment1</string>
-    <string name="title_activity_main_page">MainPage</string>
+    <string name="app_name">""</string>
+    <string name="title_activity_main_page">""</string>
     <string name="title_home">Scores</string>
     <string name="title_dashboard">Teams</string>
     <string name="title_notifications">Leagues</string>
-    <string name="title_activity_teams">teamsActivity</string>
-    <string name="title_activity_leagues">activityLeagues</string>
+    <string name="title_activity_teams">""</string>
+    <string name="title_activity_leagues">""</string>
+    <color name="black">#000000</color>
 </resources>

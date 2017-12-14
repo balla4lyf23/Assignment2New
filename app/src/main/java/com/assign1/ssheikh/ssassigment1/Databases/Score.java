@@ -1,9 +1,5 @@
 package com.assign1.ssheikh.ssassigment1.Databases;
 
-/**
- * Created by Ssheikh-cc on 12/13/2017.
- */
-
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
